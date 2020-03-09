@@ -1,0 +1,25 @@
+﻿@model List<Pencil.Models.Db.PencilTable>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a href='@Url.Action("Create", "InsertUpdate")'>Create Link</a>
+<br />
+
+<br />
+@foreach (var pencil in Model)
+{
+    <tr>
+        <td><a href='@Url.Action("Product","Home", new { id = pencil.PencilId })'>@pencil.Name</a></td>
+        <td>
+            @pencil.Price
+        </td>
+        @if (pencil.Image != null)
+        {
+            <td><a href="@Url.Action("Product","Home", new { id = pencil.PencilId })"><img src="data:image;base64,@System.Convert.ToBase64String(pencil.Image)" width="80" height="80" /> </a></td>
+        }
+    </tr>
+    <a href='@Url.Action("Edit", "InsertUpdate", new { id = pencil.PencilId })'>Edit Link</a>
+    <br />
+}

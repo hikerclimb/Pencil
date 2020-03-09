@@ -1,0 +1,25 @@
+﻿@model Pencil.Models.Db.PencilTable;
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+    <tr>
+        <td>
+            <img src="data:image;base64,@System.Convert.ToBase64String(Model.Image)" width="80" height="80" />
+        </td>
+        <td>
+            @Model.Name
+        </td>
+        <td>
+            @Model.Description
+        </td>
+        <td>
+            @Model.Price
+        </td>
+    </tr>
+
+    <a href=@Url.Action("Index","Home")>Go to home page</a>
+
+
+
