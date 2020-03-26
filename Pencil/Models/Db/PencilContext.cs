@@ -36,7 +36,7 @@ namespace Pencil.Models.Db
                 entity.HasKey(e => e.PencilId)
                     .HasName("PK__PencilTa__1F2EA2C384315400");
 
-                entity.Property(e => e.PencilId).ValueGeneratedNever();
+                entity.Property(e => e.PencilId).ValueGeneratedNever().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Description).HasColumnName("description");
 

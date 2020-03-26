@@ -1,0 +1,3 @@
+C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp2.2\Pencil.csprojAssemblyReference.cache
+C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp2.2\Pencil.AssemblyInfoInputs.cache
+C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp2.2\Pencil.AssemblyInfo.cs

@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Contentful.Core.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Pencil.Models;
 using Pencil.Models.Db;
 
 namespace Pencil.Controllers
@@ -21,9 +27,9 @@ namespace Pencil.Controllers
         // GET: InsertUpdate/Create
         public IActionResult Create()
         {
-            ViewData["BuyerId1"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId");
-            ViewData["BuyerId2"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId");
-            ViewData["BuyerId3"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId");
+            ViewBag.BuyerId1 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
+            ViewBag.BuyerId2 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
+            ViewBag.BuyerId3 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
             return View();
         }
 
@@ -32,17 +38,34 @@ namespace Pencil.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PencilId,BuyerId1,BuyerId2,BuyerId3,Image,Name,Description,Price")] PencilTable pencilTable)
+        public async Task<IActionResult> Create([Bind("BuyerId1,BuyerId2,BuyerId3,Name,Description,Price")] PencilViewModel pencilViewModel, IFormFile file)
         {
+            PencilTable pencilTable = new PencilTable();
+            
+            pencilTable.BuyerId1 = pencilViewModel.BuyerId1;
+            pencilTable.BuyerId2 = pencilViewModel.BuyerId2;
+            pencilTable.BuyerId3 = pencilViewModel.BuyerId3;
+            pencilTable.Image = pencilViewModel.Image;
+            pencilTable.Name = pencilViewModel.Name;
+            pencilTable.Description = pencilViewModel.Description;
+            pencilTable.Price = pencilViewModel.Price;
+
+            if (file != null)
+            {
+                string fileName;
+                using (var reader = new StreamReader(file.OpenReadStream()))
+                {
+                    var parsedContentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+                    fileName = parsedContentDisposition.FileName;
+                }
+                pencilTable.Image = System.IO.File.ReadAllBytes(fileName.Replace("\"", string.Empty).Replace("'", string.Empty));
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(pencilTable);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
-            ViewData["BuyerId1"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId1);
-            ViewData["BuyerId2"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId2);
-            ViewData["BuyerId3"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId3);
             return View(pencilTable);
         }
 
@@ -59,9 +82,11 @@ namespace Pencil.Controllers
             {
                 return NotFound();
             }
-            ViewData["BuyerId1"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId1);
-            ViewData["BuyerId2"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId2);
-            ViewData["BuyerId3"] = new SelectList(_context.BuyerTable, "BuyerId", "BuyerId", pencilTable.BuyerId3);
+            
+            ViewBag.BuyerId1 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
+            ViewBag.BuyerId2 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
+            ViewBag.BuyerId3 = new SelectList(_context.BuyerTable.Take(4), "BuyerId", "Buyer");
+
             return View(pencilTable);
         }
 
@@ -70,8 +95,19 @@ namespace Pencil.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PencilId,BuyerId1,BuyerId2,BuyerId3,Image,Name,Description,Price")] PencilTable pencilTable)
+        public async Task<IActionResult> Edit(int id, [Bind("PencilId,BuyerId1,BuyerId2,BuyerId3,Name,Description,Price")] PencilTable pencilTable, IFormFile file)
         {
+            if (file != null)
+            {
+                string fileName;
+                using (var reader = new StreamReader(file.OpenReadStream()))
+                {
+                    var parsedContentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+                    fileName = parsedContentDisposition.FileName;
+                }
+                pencilTable.Image = System.IO.File.ReadAllBytes(fileName.Replace("\"", string.Empty).Replace("'", string.Empty));
+            }
+
             if (id != pencilTable.PencilId)
             {
                 return NotFound();

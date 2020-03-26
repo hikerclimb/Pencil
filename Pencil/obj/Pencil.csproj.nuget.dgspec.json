@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj": {}
+    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj": {
+    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj",
+        "projectUniqueName": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj",
         "projectName": "Pencil",
-        "projectPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj",
+        "projectPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj",
         "packagesPath": "C:\\Users\\Aniket\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\obj\\",
+        "outputPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,18 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.2, )"
@@ -62,6 +74,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "contentful.csharp": {
+              "target": "Package",
+              "version": "[4.4.0, )"
             }
           },
           "imports": [
