@@ -4,22 +4,39 @@
     ViewData["Title"] = "Home Page";
 }
 
-<a href='@Url.Action("Create", "InsertUpdate")'>Create Link</a>
+<a href='@Url.Action("Create", "InsertUpdate")'>Create Pencil</a>
 <br />
 
 <br />
-@foreach (var pencil in Model)
-{
-    <tr>
-        <td><a href='@Url.Action("Product","Home", new { id = pencil.PencilId })'>@pencil.Name</a></td>
-        <td>
-            @pencil.Price
-        </td>
-        @if (pencil.Image != null)
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Pencil Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">edit link</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pencil in Model)
         {
-            <td><a href="@Url.Action("Product","Home", new { id = pencil.PencilId })"><img src="data:image;base64,@System.Convert.ToBase64String(pencil.Image)" width="80" height="80" /> </a></td>
+            <tr>
+                <td>@pencil.PencilId</td>
+                <td><a href='@Url.Action("Product","Home", new { id = pencil.PencilId })'>@pencil.Name</a></td>
+                <td class="row">
+                    @pencil.Price
+                </td>
+                <td>
+                    @if (pencil.Image != null)
+                    {
+                        <a href="@Url.Action("Product","Home", new { id = pencil.PencilId })"><img src="data:image;base64,@System.Convert.ToBase64String(pencil.Image)" width="40" height="40" /> </a>
+                    }
+                </td>
+                <td class="row"><a href='@Url.Action("Edit", "InsertUpdate", new { id = pencil.PencilId })'>Edit Link</a></td>
+            </tr>
         }
-    </tr>
-    <a href='@Url.Action("Edit", "InsertUpdate", new { id = pencil.PencilId })'>Edit Link</a>
-    <br />
-}
+    </tbody>
+</table>
+    

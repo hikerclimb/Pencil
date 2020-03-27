@@ -20,7 +20,6 @@ C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Pencil.Ta
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Pencil.TagHelpers.output.cache
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Pencil.RazorCoreGenerate.cache
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -330,3 +329,4 @@ C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp3.
 C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp3.1\Pencil.pdb
 C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\bin\Debug\netcoreapp3.1\Contentful.Core.dll
 C:\Users\Aniket\Documents\GitHub\Pencil.netcore3.1\Pencil\obj\Debug\netcoreapp3.1\Pencil.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aniket\Documents\GitHub\Pencil\Pencil\bin\Debug\netcoreapp3.1\Contentful.Core.dll

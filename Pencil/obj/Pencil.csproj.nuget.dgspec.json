@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj": {}
+    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj": {
+    "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj",
+        "projectUniqueName": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj",
         "projectName": "Pencil",
-        "projectPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\Pencil.csproj",
+        "projectPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\Pencil.csproj",
         "packagesPath": "C:\\Users\\Aniket\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil.netcore3.1\\Pencil\\obj\\",
+        "outputPath": "C:\\Users\\Aniket\\Documents\\GitHub\\Pencil\\Pencil\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
